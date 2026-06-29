@@ -44,8 +44,12 @@ namespace practice
             listBoxRates.Items.Add("Загрузка...");
             try
             {
-                string date = datePicker.Value.ToString("dd/MM/yyyy");
+                string date = datePicker.Value.ToString("yyyy-MM-dd");
                 string url = $"https://www.cbr-xml-daily.ru/daily_json.js?date={date}";
+
+                // Для отладки – выведем URL в консоль 
+                Console.WriteLine($"Запрос: {url}");
+
                 string json = await client.GetStringAsync(url);
                 allRates = ParseRates(json);
                 DisplayRates(txtFilter.Text.Trim());
