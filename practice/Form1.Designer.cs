@@ -99,6 +99,7 @@
             btnExport.TabIndex = 6;
             btnExport.Text = "Экспорт в CSV";
             btnExport.UseVisualStyleBackColor = true;
+            btnExport.Click += btnExport_Click;
             // 
             // Form1
             // 
