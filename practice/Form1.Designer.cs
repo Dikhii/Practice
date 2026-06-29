@@ -34,6 +34,7 @@
             listBoxRates = new ListBox();
             txtFilter = new TextBox();
             btnFilter = new Button();
+            btnExport = new Button();
             SuspendLayout();
             // 
             // btnToday
@@ -90,11 +91,21 @@
             btnFilter.UseVisualStyleBackColor = true;
             btnFilter.Click += btnFilter_Click;
             // 
+            // btnExport
+            // 
+            btnExport.Location = new Point(642, 11);
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(153, 29);
+            btnExport.TabIndex = 6;
+            btnExport.Text = "Экспорт в CSV";
+            btnExport.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1275, 638);
+            Controls.Add(btnExport);
             Controls.Add(btnFilter);
             Controls.Add(txtFilter);
             Controls.Add(listBoxRates);
@@ -115,5 +126,6 @@
         private ListBox listBoxRates;
         private TextBox txtFilter;
         private Button btnFilter;
+        private Button btnExport;
     }
 }
