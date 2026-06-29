@@ -32,6 +32,8 @@
             btnDate = new Button();
             datePicker = new DateTimePicker();
             listBoxRates = new ListBox();
+            txtFilter = new TextBox();
+            btnFilter = new Button();
             SuspendLayout();
             // 
             // btnToday
@@ -71,11 +73,30 @@
             listBoxRates.Size = new Size(1006, 564);
             listBoxRates.TabIndex = 3;
             // 
+            // txtFilter
+            // 
+            txtFilter.Location = new Point(411, 12);
+            txtFilter.Name = "txtFilter";
+            txtFilter.Size = new Size(125, 27);
+            txtFilter.TabIndex = 4;
+            // 
+            // btnFilter
+            // 
+            btnFilter.Location = new Point(542, 11);
+            btnFilter.Name = "btnFilter";
+            btnFilter.Size = new Size(94, 29);
+            btnFilter.TabIndex = 5;
+            btnFilter.Text = "Фильтр";
+            btnFilter.UseVisualStyleBackColor = true;
+            btnFilter.Click += btnFilter_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1030, 638);
+            ClientSize = new Size(1275, 638);
+            Controls.Add(btnFilter);
+            Controls.Add(txtFilter);
             Controls.Add(listBoxRates);
             Controls.Add(datePicker);
             Controls.Add(btnDate);
@@ -83,6 +104,7 @@
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -91,5 +113,7 @@
         private Button btnDate;
         private DateTimePicker datePicker;
         private ListBox listBoxRates;
+        private TextBox txtFilter;
+        private Button btnFilter;
     }
 }
