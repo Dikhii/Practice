@@ -34,6 +34,8 @@
             listBoxRates = new ListBox();
             txtFilter = new TextBox();
             btnFilter = new Button();
+            btnExport = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // btnToday
@@ -68,9 +70,9 @@
             // 
             listBoxRates.Font = new Font("Book Antiqua", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 204);
             listBoxRates.FormattingEnabled = true;
-            listBoxRates.Location = new Point(12, 45);
+            listBoxRates.Location = new Point(12, 85);
             listBoxRates.Name = "listBoxRates";
-            listBoxRates.Size = new Size(1006, 564);
+            listBoxRates.Size = new Size(1217, 524);
             listBoxRates.TabIndex = 3;
             // 
             // txtFilter
@@ -90,11 +92,32 @@
             btnFilter.UseVisualStyleBackColor = true;
             btnFilter.Click += btnFilter_Click;
             // 
+            // btnExport
+            // 
+            btnExport.Location = new Point(642, 11);
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(153, 29);
+            btnExport.TabIndex = 6;
+            btnExport.Text = "Экспорт в CSV";
+            btnExport.UseVisualStyleBackColor = true;
+            btnExport.Click += btnExport_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(497, 62);
+            label1.Name = "label1";
+            label1.Size = new Size(732, 20);
+            label1.TabIndex = 7;
+            label1.Text = "CSV (Comma-Separated Values) — это простой текстовый формат для представления табличных данных";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1275, 638);
+            Controls.Add(label1);
+            Controls.Add(btnExport);
             Controls.Add(btnFilter);
             Controls.Add(txtFilter);
             Controls.Add(listBoxRates);
@@ -115,5 +138,7 @@
         private ListBox listBoxRates;
         private TextBox txtFilter;
         private Button btnFilter;
+        private Button btnExport;
+        private Label label1;
     }
 }

@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Windows.Forms;
+using System.IO;
 
 namespace practice
 {
@@ -109,9 +111,29 @@ namespace practice
                 string name = value.GetProperty("Name").GetString() ?? "Неизвестно";
                 string nominal = value.GetProperty("Nominal").GetInt32().ToString();
                 string course = value.GetProperty("Value").GetDecimal().ToString("F4");
-                result[name] = $"{nominal} {property.Name} = {course}"; 
+                result[name] = $"{nominal} {property.Name} = {course}";
             }
             return result;
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            if (listBoxRates.Items.Count == 0 || listBoxRates.Items[0].ToString().StartsWith("Загрузка"))
+            {
+                MessageBox.Show("Сначала загрузите курсы.", "Информация");
+                return;
+            }
+
+            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "rates.csv");
+            using (var writer = new StreamWriter(path, false, Encoding.UTF8))
+            {
+                writer.WriteLine("Валюта;Курс");
+                foreach (var item in listBoxRates.Items)
+                {
+                    writer.WriteLine(item.ToString());
+                }
+            }
+            MessageBox.Show($"Файл сохранён на рабочем столе: {path}", "Готово");
         }
     }
 }
